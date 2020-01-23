@@ -1,0 +1,26 @@
+﻿@model eimdbapi.Models.Material
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Novo Material</h2>
+@using (Html.BeginForm("Create", "material", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.name)
+        @Html.TextBoxFor(m => m.name, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.unit)
+        @Html.TextBoxFor(m => m.unit, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.gitCode)
+        @Html.TextBoxFor(m => m.gitCode, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary" value="Create">Salvar</button>
+}
+

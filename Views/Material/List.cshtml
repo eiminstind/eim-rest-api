@@ -1,0 +1,22 @@
+﻿@model IEnumerable<eimdbapi.Models.Material>
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Lista de materiais armazenados no db</h2>
+<table>
+    <tr>
+        <th>Descrição</th>
+        <th>Unidade</th>
+        <th>Cód. GIT</th>
+    </tr>
+    @foreach (var material in Model)
+    {
+        <tr>
+            <td>@material.name</td>
+            <td>@material.unit</td>
+            <td>@material.gitCode</td>  
+        </tr>
+    }
+    </table>

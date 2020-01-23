@@ -1,0 +1,16 @@
+﻿@model  eimdbapi.Models.Movi
+@{
+    ViewBag.Title = "MaterialHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MOVI @Model.MoviID</h2>
+<h3>Solicitada por: @Model.Requester.Name</h3>
+
+<ul>
+    @foreach (var material in Model.MaterialsList)
+    {
+        <li>@material.name</li>
+    }
+</ul>
+

@@ -1,0 +1,26 @@
+﻿@model eimdbapi.ViewModel.NewMoviViewModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Nova Movi</h2>
+<p>Novo Material: </p>
+@using (Html.BeginForm("includeNewMaterialToList", "movi", FormMethod.Post))
+{
+<div style="display:inline-block">
+    <div class="form-group" style="display:inherit">
+        @Html.LabelFor(m => m.MaterialToInclude.name)
+        @Html.TextBoxFor(m => m.MaterialToInclude.name, new { @class = "form-control" })
+    </div>
+    <div class="form-group" style="display:inherit">
+        @Html.LabelFor(m => m.MaterialToInclude.gitCode)
+        @Html.TextBoxFor(m => m.MaterialToInclude.gitCode, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary" value="Create" sstyle="display:inherit">Salvar</button>
+</div>
+}
+
+
+
